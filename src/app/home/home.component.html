@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="heading">
+    <div id="title">Premier League Prediction</div>
+  </div>
+  <div *ngIf="showOutput" class="finalResult">{{ this.result }}</div>
+  <div class="homeBody">
+    <div class="inp-border a1">
+      <input
+        class="input"
+        type="text"
+        name="name1"
+        [(ngModel)]="homeTeam"
+        placeholder="Home Team"
+      />
+    </div>
+    <div class="inp-border a4">
+      <input
+        class="input"
+        type="text"
+        name="name1"
+        [(ngModel)]="awayTeam"
+        placeholder="Away Team"
+      />
+    </div>
+  </div>
+  <div id="buttonInfo">
+    <button id="predictButton" (click)="predict()">Predict</button>
+  </div>
+  <div class="showTeam">
+    <div class="abc" *ngIf="showTeams">
+      <div class="teamList1">{{ this.team }}</div>
+      <button id="teamButton" (click)="showTeam()">Close</button>
+    </div>
+    <div class="abc" *ngIf="!showTeams">
+      <button id="teamButton" (click)="showTeam()">Show Team List</button>
+    </div>
+  </div>
+</div>
